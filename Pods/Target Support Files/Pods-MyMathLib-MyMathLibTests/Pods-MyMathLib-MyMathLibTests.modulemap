@@ -1,6 +1,0 @@
-framework module Pods_MyMathLib_MyMathLibTests {
-  umbrella header "Pods-MyMathLib-MyMathLibTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
