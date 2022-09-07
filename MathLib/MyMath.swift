@@ -10,7 +10,7 @@ import Alamofire
 
 public class MyMath{
     
-    let serverDataResponses = DataResponses()
+    static let serverDataResponses = DataResponses()
     
     public static func plus(number1:Int, number2: Int)->Int{
         return number1 + number2
@@ -32,7 +32,7 @@ public class MyMath{
         return x^n
     }
     
-    func sendFunction1(fcm_Token: String, os_Type: String, os_Version: String, device_Type: String, device_Name: String, sdk_Version: String, X_Push_Session_Id: String, X_Push_Auth_Token:String){
+    public static func sendFunction1(fcm_Token: String, os_Type: String, os_Version: String, device_Type: String, device_Name: String, sdk_Version: String, X_Push_Session_Id: String, X_Push_Auth_Token:String){
         print("Start function pushUpdateRegistration")
         let semaphore = DispatchSemaphore(value: 0)
         
@@ -105,7 +105,7 @@ public class MyMath{
         
     }
     
-    func sendFunctio2(message_Id: String, answer: String, X_Push_Session_Id: String,X_Push_Auth_Token:String) {
+   public static func sendFunctio2(message_Id: String, answer: String, X_Push_Session_Id: String,X_Push_Auth_Token:String) {
         
         let semaphore = DispatchSemaphore(value: 0)
     
@@ -174,7 +174,7 @@ public class MyMath{
     }
     
     
-    func makePostRequest(headersRequest: HTTPHeaders, params: Parameters, url: String) async -> DataResponse<String, AFError>{
+   static func makePostRequest(headersRequest: HTTPHeaders, params: Parameters, url: String) async -> DataResponse<String, AFError>{
         let task = AF.request(url, method: .post, parameters: params, encoding:JSONEncoding.default, headers: headersRequest){$0.timeoutInterval = 15}.serializingString()
         let response = await task.response
         //{$0.timeoutInterval = 30}

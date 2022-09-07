@@ -9,8 +9,10 @@ import XCTest
 import MathLib
 
 class MathLibTests: XCTestCase {
-
-    let math = MyMath()
+    
+    override func setUp() {
+        
+    }
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -57,7 +59,8 @@ class MathLibTests: XCTestCase {
     }
     
     func testSend(){
-        let response = math.sendFunction1(fcm_Token: "", os_Type: "", os_Version: "", device_Type: "", device_Name: "", sdk_Version: "", X_Push_Session_Id: "", X_Push_Auth_Token: "")
+        let response = MyMath.sendFunction1(fcm_Token: "", os_Type: "", os_Version: "", device_Type: "", device_Name: "", sdk_Version: "", X_Push_Session_Id: "", X_Push_Auth_Token: "")
+        print(response)
     }
 
 }
