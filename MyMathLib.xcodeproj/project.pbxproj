@@ -33,6 +33,7 @@
 		01C56AC928C8958600AA54E1 /* MyMathLibTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMathLibTests.swift; sourceTree = "<group>"; };
 		01C56AD428C8965900AA54E1 /* MathTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathTest.swift; sourceTree = "<group>"; };
 		01C56AD528C8965900AA54E1 /* MyMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMath.swift; sourceTree = "<group>"; };
+		01C56AD828C8CA8F00AA54E1 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		1C76C982821ABD95D05372C4 /* Pods-MyMathLib-MyMathLibTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMathLib-MyMathLibTests.release.xcconfig"; path = "Target Support Files/Pods-MyMathLib-MyMathLibTests/Pods-MyMathLib-MyMathLibTests.release.xcconfig"; sourceTree = "<group>"; };
 		2E52246C324570C42893E8BA /* Pods-MyMathLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMathLib.release.xcconfig"; path = "Target Support Files/Pods-MyMathLib/Pods-MyMathLib.release.xcconfig"; sourceTree = "<group>"; };
 		691A99127397FA596E4B3612 /* Pods_MyMathLib_MyMathLibTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMathLib_MyMathLibTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +89,7 @@
 				01C56AD428C8965900AA54E1 /* MathTest.swift */,
 				01C56AD528C8965900AA54E1 /* MyMath.swift */,
 				01C56ABF28C8958500AA54E1 /* MyMathLib.h */,
+				01C56AD828C8CA8F00AA54E1 /* Package.swift */,
 			);
 			path = MyMathLib;
 			sourceTree = "<group>";
@@ -149,6 +151,8 @@
 			dependencies = (
 			);
 			name = MyMathLib;
+			packageProductDependencies = (
+			);
 			productName = MyMathLib;
 			productReference = 01C56ABC28C8958500AA54E1 /* MyMathLib.framework */;
 			productType = "com.apple.product-type.framework";
@@ -201,6 +205,8 @@
 				Base,
 			);
 			mainGroup = 01C56AB228C8958500AA54E1;
+			packageReferences = (
+			);
 			productRefGroup = 01C56ABD28C8958500AA54E1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
