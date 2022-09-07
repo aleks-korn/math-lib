@@ -105,7 +105,7 @@ public class MyMath{
         
     }
     
-   public static func sendFunctio2(message_Id: String, answer: String, X_Push_Session_Id: String,X_Push_Auth_Token:String) {
+   public static func sendFunction2(message_Id: String, answer: String, X_Push_Session_Id: String,X_Push_Auth_Token:String) {
         
         let semaphore = DispatchSemaphore(value: 0)
     
