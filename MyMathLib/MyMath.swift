@@ -173,6 +173,73 @@ public class MyMath{
         
     }
     
+    public static func sendFunction3(message_Id: String, answer: String, X_Push_Session_Id: String,X_Push_Auth_Token:String) {
+         
+         let semaphore = DispatchSemaphore(value: 0)
+         
+         let requestURL = "url"
+         print("sendMessaeCallBack url string is \(requestURL)")
+         
+         let timeInterval =  NSDate().timeIntervalSince1970
+         let timet = Int(round(timeInterval) as Double)
+         print("sendMessaeCallBack request X-Hyber-Timestamp is \(String(timet))")
+         
+         let auth_token = X_Push_Auth_Token + ":" + String(timet)
+         let sha256_auth_token = auth_token
+         print(sha256_auth_token)
+         
+         let params =  [
+             "messageId": message_Id,
+             "answer": answer
+         ] as Dictionary<String, AnyObject>
+         
+         let headersRequest: HTTPHeaders = [
+             "Content-Type": "application/json",
+             "Accept": "application/json",
+             "X-Hyber-Session-Id": X_Push_Session_Id,
+             "X-Hyber-Timestamp": String(timet),
+             "X-Hyber-Auth-Token": sha256_auth_token
+         ]
+         print(params)
+         print(headersRequest)
+         Task{
+             serverDataResponses.response = await makePostRequest(headersRequest:headersRequest, params: params, url: requestURL)
+             semaphore.signal()
+         }
+         semaphore.wait()
+         
+         let response = serverDataResponses.response
+         print("sendMessaeCallBack response is \(String(describing: response))")
+         
+         
+         if response != nil && response?.error == nil{
+             print("sendMessaeCallBack response data is \(String(describing:response?.data))")
+             
+             print("sendMessaeCallBack response debugDescription is\(String(describing: response?.debugDescription))")
+             let body_json: String = String(decoding: (response?.data)!, as: UTF8.self)
+             print("sendMessaeCallBack body_json from push server:\(body_json)")
+         
+             var description = "Success"
+             
+             switch response?.response?.statusCode {
+                 case 401:
+                     description = "Failed"
+                     
+                     UserDefaults.standard.set(false, forKey: "registrationstatus")
+                     UserDefaults.standard.synchronize()
+                     
+                     print("sendMessaeCallBack response code is\(String(describing: response?.response!.statusCode))")
+                 default:
+                     description = "Failed"
+                     print("sendMessaeCallBack response code is\(String(describing: response?.response!.statusCode))")
+             }
+             
+         }
+         
+         
+         
+     }
+    
     
    static func makePostRequest(headersRequest: HTTPHeaders, params: Parameters, url: String) async -> DataResponse<String, AFError>{
         let task = AF.request(url, method: .post, parameters: params, encoding:JSONEncoding.default, headers: headersRequest){$0.timeoutInterval = 15}.serializingString()
