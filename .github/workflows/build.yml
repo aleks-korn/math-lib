@@ -19,6 +19,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Build
-        run: swift build -v
-      - name: Run tests
-        run: swift test -v
+        run: xcodebuild -list -workspace MyMathLib.xcworkspace
+      
