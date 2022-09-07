@@ -66,6 +66,7 @@
 		01C56AB228C8958500AA54E1 = {
 			isa = PBXGroup;
 			children = (
+				01C56AD828C8CA8F00AA54E1 /* Package.swift */,
 				01C56ABE28C8958500AA54E1 /* MyMathLib */,
 				01C56AC828C8958600AA54E1 /* MyMathLibTests */,
 				01C56ABD28C8958500AA54E1 /* Products */,
@@ -89,7 +90,6 @@
 				01C56AD428C8965900AA54E1 /* MathTest.swift */,
 				01C56AD528C8965900AA54E1 /* MyMath.swift */,
 				01C56ABF28C8958500AA54E1 /* MyMathLib.h */,
-				01C56AD828C8CA8F00AA54E1 /* Package.swift */,
 			);
 			path = MyMathLib;
 			sourceTree = "<group>";
