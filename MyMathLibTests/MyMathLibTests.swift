@@ -59,9 +59,6 @@ class MyMathLibTests: XCTestCase {
         let response = MyMath.sendFunction1(fcm_Token: "", os_Type: "", os_Version: "", device_Type: "", device_Name: "", sdk_Version: "", X_Push_Session_Id: "", X_Push_Auth_Token: "")
         print(response)
     }
-    func testSend2(){
-        let response = MyMath.sendFunction2(message_Id: "", answer: "", X_Push_Session_Id: "", X_Push_Auth_Token: "")
-        print(response)
-    }
+    
 
 }
