@@ -10,6 +10,7 @@ import MathLib
 
 class MathLibTests: XCTestCase {
 
+    let math = MyMath()
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -53,6 +54,10 @@ class MathLibTests: XCTestCase {
     func testMult(){
       let response =  MyMath.multiplication(number1: 3, number2: 4)
         print(response)
+    }
+    
+    func testSend(){
+        let response = math.sendFunction1(fcm_Token: "", os_Type: "", os_Version: "", device_Type: "", device_Name: "", sdk_Version: "", X_Push_Session_Id: "", X_Push_Auth_Token: "")
     }
 
 }
