@@ -60,5 +60,10 @@ class MyMathLibTests: XCTestCase {
         print(response)
     }
     
+    
+    func testSome(){
+        let response = MyMath.someFunc(text1: "Hello ", text2: "World!!!")
+        print(response)
+    }
 
 }

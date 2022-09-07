@@ -183,6 +183,10 @@ public class MyMath{
     }
     
     
+    public static func someFunc(text1: String, text2: String)->String{
+        return text1 + text2
+    }
+    
     internal class DataResponses{
         
         var response : DataResponse<String, AFError>!
