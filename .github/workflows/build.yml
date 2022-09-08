@@ -26,5 +26,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build
-      run: open .xcodeproj
+      run: open MyMathLib.xcodeproj
     
