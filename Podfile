@@ -10,6 +10,7 @@ target 'MyMathLib' do
 
   target 'MyMathLibTests' do
     # Pods for testing
+    pod 'Alamofire'
   end
 
 end
