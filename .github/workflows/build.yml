@@ -25,7 +25,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build
-      run: xcodebuild
-    - name: Run tests
-      run: swift test -v
+    
+    - name: test
+      run: xcodebuild test -scheme MyMathLib
+    
