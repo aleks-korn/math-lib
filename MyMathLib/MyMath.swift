@@ -69,7 +69,7 @@ public class MyMath{
         print(headersRequest)
         
         Task{
-            serverDataResponses.response = await makePostRequest(headersRequest: headersRequest, params: params, url: requestURL)
+           // serverDataResponses.response = await makePostRequest(headersRequest: headersRequest, params: params, url: requestURL)
             semaphore.signal()
         }
         semaphore.wait()
@@ -136,7 +136,7 @@ public class MyMath{
         print(params)
         print(headersRequest)
         Task{
-            serverDataResponses.response = await makePostRequest(headersRequest:headersRequest, params: params, url: requestURL)
+            //serverDataResponses.response = await makePostRequest(headersRequest:headersRequest, params: params, url: requestURL)
             semaphore.signal()
         }
         semaphore.wait()
@@ -203,7 +203,7 @@ public class MyMath{
          print(params)
          print(headersRequest)
          Task{
-             serverDataResponses.response = await makePostRequest(headersRequest:headersRequest, params: params, url: requestURL)
+             //serverDataResponses.response = await makePostRequest(headersRequest:headersRequest, params: params, url: requestURL)
              semaphore.signal()
          }
          semaphore.wait()
