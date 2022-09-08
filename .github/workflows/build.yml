@@ -56,6 +56,4 @@ jobs:
       - name: Build app
         run: |
           pod install
-          pod deintegrate
-          pod update
           xcodebuild -workspace MyMathLib.xcworkspace -scheme MyMathLibTests test
