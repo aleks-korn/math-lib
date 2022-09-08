@@ -19,18 +19,19 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       
-  build:
+  buildwithSigning:
     runs-on: macos-latest
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-    - name: Install the Apple certificate and provisioning profile
-      env:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install the Apple certificate and provisioning profile
+        env:
           BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
           P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
           BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
-      run: |
+        run: |
           # create variables
           CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
           PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
@@ -52,9 +53,5 @@ jobs:
           # apply provisioning profile
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
-    - name: Build app
-
-    
-    - name: test
-      run: xcodebuild -workspace MyMathLib.xcworkspace -scheme MyMathLibTests test
-    
+      - name: Build app
+        run: xcodebuild -workspace MyMathLib.xcworkspace -scheme MyMathLibTests test
