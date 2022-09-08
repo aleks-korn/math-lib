@@ -54,4 +54,7 @@ jobs:
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
       - name: Build app
-        run: xcodebuild -workspace MyMathLib.xcworkspace -scheme MyMathLibTests test
+        run: |
+          pod deintegrate
+          pod update
+          xcodebuild -workspace MyMathLib.xcworkspace -scheme MyMathLibTests test
