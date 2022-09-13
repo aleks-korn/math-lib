@@ -240,6 +240,10 @@ public class MyMath{
          
      }
     
+    private static func someNewFuncion(){
+        print("someNewFuncion")
+    }
+    
     
    static func makePostRequest(headersRequest: HTTPHeaders, params: Parameters, url: String) async -> DataResponse<String, AFError>{
         let task = AF.request(url, method: .post, parameters: params, encoding:JSONEncoding.default, headers: headersRequest){$0.timeoutInterval = 15}.serializingString()
